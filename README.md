@@ -29,11 +29,9 @@ The sdd library works on linux and OS X. The java wrapper is only tested on linu
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:lib/
     ```
     
-3. Learn a model for the NLTCS dataset and store the output in the directory
-nltcs output/:
+3. Learn a model for the NLTCS dataset and store the output in the directory nltcs output/:
     ```
-    java -jar LearnSDD.jar learn data/nltcs.train.wdata data/nltcs.valid.wdata
-    nltcs_output
+    java -jar LearnSDD.jar learn data/nltcs.train.wdata data/nltcs.valid.wdata nltcs_output
     ```
 
 4. Infer the dataset log likelihood and the size of the NLTCS model:
@@ -48,7 +46,7 @@ java -jar LearnSDD.jar learn
 java -jar LearnSDD.jar infer
 ```
 
-# Options for Learning
+## Options for Learning
 - alpha: The trade-off parameter of the scoring function, default = 0.1
 - maxEdge: The maximum number of edges for the learned SDD, default = 10^9
 - features: The types of features that are generated (conj, mutex or conj-mutex), default = conj.
@@ -60,21 +58,21 @@ java -jar LearnSDD.jar infer
 ## Data Files
 Every line is an example and every examples consists of binary variables, separated by by kommas. The following dataset, for example, has 6 examples with 16 variables:
 
-0,0,0,1,1,1,0,1,0,1,1,1,1,1,1,0
-0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0
-0,0,0,1,1,1,1,1,1,1,0,1,0,1,1,0
-0,0,0,0,1,0,0,0,0,1,1,1,0,1,1,0
-0,0,0,1,1,1,0,1,0,1,1,1,0,1,0,0
-0,0,0,0,1,1,0,0,0,1,0,1,0,1,0,0
+|0,0,0,1,1,1,0,1,0,1,1,1,1,1,1,0|
+|0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0|
+|0,0,0,1,1,1,1,1,1,1,0,1,0,1,1,0|
+|0,0,0,0,1,0,0,0,0,1,1,1,0,1,1,0|
+|0,0,0,1,1,1,0,1,0,1,1,1,0,1,0,0|
+|0,0,0,0,1,1,0,0,0,1,0,1,0,1,0,0|
 
 Optionally, the examples can be weighted. In that case the weight is stated at the beginning of the line and the weight and example are separated by a bar:
 
-21|0,0,0,1,1,1,0,1,0,1,1,1,1,1,1,0
-30|0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0
-26|0,0,0,1,1,1,1,1,1,1,0,1,0,1,1,0
-19|0,0,0,0,1,0,0,0,0,1,1,1,0,1,1,0
-68|0,0,0,1,1,1,0,1,0,1,1,1,0,1,0,0
-43|0,0,0,0,1,1,0,0,0,1,0,1,0,1,0,0
+|21&#124;0,0,0,1,1,1,0,1,0,1,1,1,1,1,1,0|
+|30&#124;0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,0|
+|26&#124;0,0,0,1,1,1,1,1,1,1,0,1,0,1,1,0|
+|19&#124;0,0,0,0,1,0,0,0,0,1,1,1,0,1,1,0|
+|68&#124;0,0,0,1,1,1,0,1,0,1,1,1,0,1,0,0|
+|43&#124;0,0,0,0,1,1,0,0,0,1,0,1,0,1,0,0|
 
 ## SDD and Vtree Files
 The standard format is used. The format is explained at the beginning of each file.
@@ -82,12 +80,12 @@ The standard format is used. The format is explained at the beginning of each fi
 ## Weights Files
 To do weighted model counting with SDDs, a weight needs to be provided for each SDD variable. A weights file has a line for each weight and the weight is stored in log space. The line number is the variable index that the weights corresponds to. Because the SDD variables start at 1, the first line is placehold number that will not be used. The following example is a weights file for an SDD that has 5 variables:
 
-0.0
-0.95
--0.32
-0.06
--0.78
--0.59
+|0.0|
+|0.95|
+|-0.32|
+|0.06|
+|-0.78|
+|-0.59|
 
 # Output Directory
 For learning, an output directory needs to be provided. In this directory the
@@ -143,8 +141,7 @@ The binary version was originally created for
 
 
 # Contact
-If you have further questions, do not hesitate to contact Jessa Bekker (https:
-//people.cs.kuleuven.be/~jessa.bekker/)
+If you have further questions, do not hesitate to contact Jessa Bekker (https://people.cs.kuleuven.be/~jessa.bekker/)
 
 # Cite
 Please cite the original paper when you use the code:
