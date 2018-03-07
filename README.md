@@ -131,6 +131,17 @@ To test a feature, it is temporarily added to the model and scored based on the 
 # Weight Learning Library
 Weight learning is implemented in c. The directory lib/ already contains the compiled library, but the source code is also available in weightlearner/. The implementation uses the Limited-memory BFGS implementation of Jorge Nocedal and Naoaki Okazaki (www.chokkan.org/software/liblbfgs/).
 
+# Data
+The data/ folder contains the binary version of the NLTCS dataset. The original data sets comes from the National Long-Term Care Survey:
+
+*Manton, Kenneth G. National Long-Term Care Survey: 1982, 1984, 1989, 1994, 1999, and 2004. Ann Arbor, MI: Inter-university Consortium for Political and Social Research [distributor], 2010-06-21. https://doi.org/10.3886/ICPSR09681.v5*
+
+The binary version was originally created for
+
+*Daniel Lowd, Jesse Davis: Learning Markov Network Structure with Decision Trees. ICDM 2010*
+
+
+
 # Contact
 If you have further questions, do not hesitate to contact Jessa Bekker (https:
 //people.cs.kuleuven.be/~jessa.bekker/)
