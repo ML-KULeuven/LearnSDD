@@ -1,10 +1,9 @@
 package weightlearner;
 
-import java.io.File;
+import jni.JNITYPE_p_sdd_manager_t;
+import jni.JNITYPE_p_sdd_node_t;
 
-import swig.SWIGTYPE_p_sdd_manager_t;
-import swig.SWIGTYPE_p_sdd_node_t;
-import swig.SwigPointer;
+import java.io.File;
 
 public class LbfgsWeightLearnerJNI {
 
@@ -15,15 +14,15 @@ public class LbfgsWeightLearnerJNI {
 			int nbInstances, double[] weights, double l1Const);
 	
 
-	public static void learnWeights(SWIGTYPE_p_sdd_node_t sdd, SWIGTYPE_p_sdd_manager_t mgr, int nbFeatures, int[] counts,
-			int nbInstances, double[] weights){
+	public static void learnWeights(JNITYPE_p_sdd_node_t sdd, JNITYPE_p_sdd_manager_t mgr, int nbFeatures, int[] counts,
+									int nbInstances, double[] weights){
 //		learnWeights(SwigPointer.getCPtr(sdd) , SwigPointer.getCPtr(mgr), nbFeatures, counts, nbInstances, weights);
 		learnWeights(sdd, mgr, nbFeatures, counts, nbInstances, weights, 0.95);
 	}
 	
-	public static void learnWeights(SWIGTYPE_p_sdd_node_t sdd, SWIGTYPE_p_sdd_manager_t mgr, int nbFeatures, int[] counts,
+	public static void learnWeights(JNITYPE_p_sdd_node_t sdd, JNITYPE_p_sdd_manager_t mgr, int nbFeatures, int[] counts,
 			int nbInstances, double[] weights, double l1Const){
-		learnWeightsL1(SwigPointer.getCPtr(sdd) , SwigPointer.getCPtr(mgr), nbFeatures, counts, nbInstances, weights, l1Const);
+		learnWeightsL1(JNITYPE_p_sdd_node_t.getCPtr(sdd) , JNITYPE_p_sdd_manager_t.getCPtr(mgr), nbFeatures, counts, nbInstances, weights, l1Const);
 	}
 	
 	static {

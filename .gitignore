@@ -1,7 +1,10 @@
 bin
-examples/*class
 lib/libsdd.so
+nltcs_output
 
+META-INF
 .idea
 *.iml
 out
+
+TODO

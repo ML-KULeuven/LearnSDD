@@ -1,7 +1,7 @@
 # LearnSDD
 This is the implementation of the LearnSDD algorithm that learns a tractable Markov Network structure with a tractable represenation, as presented in:
 
-
+```
 @inproceedings{bekker2015tractable,
   title={Tractable learning for complex probability queries},
   author={Bekker, Jessa and Davis, Jesse and Choi, Arthur and Darwiche, Adnan and Van den Broeck, Guy},
@@ -9,12 +9,14 @@ This is the implementation of the LearnSDD algorithm that learns a tractable Mar
   pages={2242--2250},
   year={2015}
 } 
+```
 
 # Dependencies and System Requirements
 - sdd 2.0 library: Download from http://reasoning.cs.ucla.edu/sdd/
-- JSDD2.jar: The Java wrapper for the sdd library. It is already included in lib/, but also available on
-- jgrapht: Graph library (http://jgrapht.org/)
-- commonsio: IO commons (https://commons.apache.org/proper/commons-io/)
+- JSDD.jar: The Java wrapper for the sdd library. It is already included in lib/, but also available on https://github.com/jessa/JSDD (already included in LearnSDD.jar)
+- jgrapht: Graph library (http://jgrapht.org/) (already included in LearnSDD.jar)
+- commonsio: IO commons (https://commons.apache.org/proper/commons-io/) (already included in LearnSDD.jar)
+- l-bfgs: Limited-memory BFGS implementation. It is already included, but is also available on (www.chokkan.org/software/liblbfgs/)
 
 The sdd library works on linux and OS X. The java wrapper is only tested on linux, but should also work on OS X.
 
@@ -127,7 +129,7 @@ Because the number of candidate features can be extremely high, only a subset of
 To test a feature, it is temporarily added to the model and scored based on the training set log likelihood improvement and relative increase in number of edges. The datasets are represented by data.Data, where each instance is a data.Instance object. For practical reasons, each feature is added to the datasets as a variable. Therefore, the datasets are kept in the model (learnsdd.Model). Each time a feature is added, the weights of alle the features need to be relearned, this is the task of weightlearner.LbfgsWeightLearner. The weightlearner is implemented in c and accessed using Java Native Interface (JNI).
 
 # Weight Learning Library
-Weight learning is implemented in c. The directory lib/ already contains the compiled library, but the source code is also available in weightlearner/. The implementation uses the Limited-memory BFGS implementation of Jorge Nocedal and Naoaki Okazaki.
+Weight learning is implemented in c. The directory lib/ already contains the compiled library, but the source code is also available in weightlearner/. The implementation uses the Limited-memory BFGS implementation of Jorge Nocedal and Naoaki Okazaki (www.chokkan.org/software/liblbfgs/).
 
 # Contact
 If you have further questions, do not hesitate to contact Jessa Bekker (https:
@@ -136,6 +138,7 @@ If you have further questions, do not hesitate to contact Jessa Bekker (https:
 # Cite
 Please cite the original paper when you use the code:
 
+```
 @inproceedings{bekker2015tractable,
   title={Tractable learning for complex probability queries},
   author={Bekker, Jessa and Davis, Jesse and Choi, Arthur and Darwiche, Adnan and Van den Broeck, Guy},
@@ -143,3 +146,4 @@ Please cite the original paper when you use the code:
   pages={2242--2250},
   year={2015}
 } 
+```
