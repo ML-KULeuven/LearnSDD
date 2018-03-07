@@ -18,7 +18,7 @@ This is the implementation of the LearnSDD algorithm that learns a tractable Mar
 - commonsio: IO commons (https://commons.apache.org/proper/commons-io/) (already included in LearnSDD.jar)
 - l-bfgs: Limited-memory BFGS implementation. It is already included, but is also available on (www.chokkan.org/software/liblbfgs/)
 
-The sdd library works on linux and OS X. The java wrapper is only tested on linux, but should also work on OS X.
+The sdd library works on linux and OS X. The java wrapper and LearnSDD are only tested on linux, but should also work on OS X.
 
 
 # Quickstart
