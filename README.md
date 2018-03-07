@@ -116,7 +116,7 @@ standable way.
 
 If the flag --verbose is set, then additionally these files are created:
  - **log**: A log file
- - **<it>/**: For each iteration a folder is created with the model of that
+ - **&lt;it&gt;/**: For each iteration a folder is created with the model of that
 iteration. It contains the same files as best/
 
 # Brief Code Walk-through
