@@ -1,0 +1,9 @@
+bin
+examples/*class
+output
+lib/libsdd.so
+include/*
+
+.idea
+*.iml
+out
