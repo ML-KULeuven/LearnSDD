@@ -14,11 +14,11 @@ This is the implementation of the LearnSDD algorithm that learns a tractable Mar
 # Dependencies and System Requirements
 - sdd 2.0 library: Download from http://reasoning.cs.ucla.edu/sdd/
 - JSDD.jar: The Java wrapper for the sdd library. It is already included in lib/, but also available on https://github.com/jessa/JSDD (already included in LearnSDD.jar)
-- jgrapht: Graph library (http://jgrapht.org/) (already included in LearnSDD.jar)
-- commonsio: IO commons (https://commons.apache.org/proper/commons-io/) (already included in LearnSDD.jar)
+- jgrapht: Graph library 1.0.0 (http://jgrapht.org/) (already included in LearnSDD.jar)
+- commonsio: IO commons 2.7 (https://commons.apache.org/proper/commons-io/) (already included in LearnSDD.jar)
 - l-bfgs: Limited-memory BFGS implementation. It is already included, but is also available on (www.chokkan.org/software/liblbfgs/)
 
-The sdd library works on linux and OS X. The java wrapper and LearnSDD are only tested on linux, but should also work on OS X.
+The sdd library works on linux and OS X. 
 
 
 # Quickstart
@@ -30,8 +30,11 @@ The sdd library works on linux and OS X. The java wrapper and LearnSDD are only 
     ```
     
 3. Learn a model for the NLTCS dataset and store the output in the directory nltcs output/:
+
+    *Make sure that the sdd library gets enough memory by setting -Xss256m and add the libraries to the path.*
+    
     ```
-    java -jar LearnSDD.jar learn data/nltcs.train.wdata data/nltcs.valid.wdata nltcs_output
+    java -Xss256m -Djava.library.path=lib  -jar LearnSDD.jar learn data/nltcs.train.wdata data/nltcs.valid.wdata nltcs_output
     ```
 
 4. Infer the dataset log likelihood and the size of the NLTCS model:
